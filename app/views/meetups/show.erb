@@ -1,0 +1,17 @@
+<h1><%= @meetup.name %></h1>
+<p>Created By: <%=  @creator.username %></p>
+<p>Description: <%=  @meetup.description %></p>
+<p>Location: <%=  @meetup.location %></p>
+
+<h4> Members </h4>
+<ul id= 'attendees'>
+  <% @meetup.users.each do |member| %>
+  <li><%= member.username %>
+    <img class="avatar" src=" <%= member.avatar_url %>" style="width:80px;height:48px;"><br />
+  </li>
+  <% end %>
+</ul>
+
+<% if logged_in? %>
+  <a class="button" id="join-meetup" href="#" value="<%= @meetup.id %>"><%= @button_text %></a>
+<% end %>

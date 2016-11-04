@@ -1,0 +1,27 @@
+<h1>Meetups</h1>
+
+<% if logged_in? %>
+<p>My Meetups</p>
+  <% if @my_meetups %>
+    <ul>
+      <% @my_meetups.sort.each do |meetup| %>
+      <li><a href = <%= "/meetup/#{meetup.id}" %> ><%= "#{meetup.name}" %></a></li>
+      <% end %>
+    </ul>
+  <% end %>
+<% end %>
+
+<p>All Meetups: </p>
+<ul>
+  <% @meetups.each do |meetup| %>
+    <li>
+      <a href="/meetups/<%= meetup['id'] %>"><%= meetup["name"] %></a>
+      <p>Description: <%= meetup["description"] %></p>
+    </li>
+  <% end %>
+</ul>
+
+<br></br>
+<% if logged_in? %>
+<a href="/meetups/new">Create A Meetup</a>
+<% end %>

@@ -17,4 +17,9 @@ test:
   password:
 
 production:
-  url: <%= ENV['DATABASE_URL'] %>
+  adapter: postgresql
+  encoding: unicode
+  database: meetups_development
+  pool: 20
+  username:
+  password:

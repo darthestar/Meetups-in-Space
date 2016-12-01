@@ -15,3 +15,6 @@ test:
   pool: 20
   username:
   password:
+
+production:
+  url: <%= ENV['DATABASE_URL'] %>

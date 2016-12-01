@@ -1,2 +1,2 @@
-require './app' # or whatever name you gave to your server file
+require './app'
 run Sinatra::Application

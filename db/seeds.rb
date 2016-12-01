@@ -6,6 +6,5 @@
 #   Person.create(first_name: 'Eric', last_name: 'Kelly')
 
 
-# Use Factory Girl to create users?
 
 # create Meetup Memberships

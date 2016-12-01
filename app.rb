@@ -66,7 +66,6 @@ get '/meetups/:id' do
   @meetup = Meetup.find(params['id'])
   @button_text = user_joined?(@meetup) ? "Leave Meetup" : "Join!"
 
-  # memberships = MeetupMembership.where(meetup: @meetup)
   memberships = @meetup.meetup_memberships
   memberships.each do |membership|
     if membership.creator_id == true
@@ -91,16 +90,15 @@ post '/meetups' do
   end
 end
 
-post '/meetups_join.json' do
+post '/meetups_join' do
   content_type :json
   @meetup = Meetup.find(params[:meetup_id])
   @user   = User.find(session[:user_id])
-
-  @meetup.users << @user
+  MeetupMembership.create(user: current_user, meetup: @meetup, creator_id: false)
   @user.to_json
 end
 
-post '/meetups_leave.json' do
+post '/meetups_leave' do
   content_type :json
   @meetup = Meetup.find(params[:meetup_id])
   @user   = User.find(session[:user_id])

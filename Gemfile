@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-
+ruby "2.2.3"
 gem 'omniauth-github'
 gem 'pg'
 gem 'rake'
@@ -19,4 +19,8 @@ group :test do
   gem 'poltergeist'
   gem 'database_cleaner'
   gem 'factory_girl'
+end
+
+group :procduction do
+  gem 'pg'
 end

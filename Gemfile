@@ -22,6 +22,6 @@ group :test do
   gem 'factory_girl'
 end
 
-group :procduction do
+group :production do
   gem 'pg'
 end

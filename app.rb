@@ -1,6 +1,6 @@
 require 'sinatra'
 require_relative 'config/application'
-require 'pry'
+
 
 helpers do
   def current_user

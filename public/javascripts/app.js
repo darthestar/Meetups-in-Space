@@ -1,18 +1,19 @@
 //JAVASCRIPT CODE GOES HERE
-$(document).ready(function() {
 
+$(document).ready(function() {
   $('#join-meetup').click(function(event) {
     event.preventDefault();
-
-    meetup_id = $(this).attr('value')
+    meetup_id = $(this).attr('value');
 
     if($(this).text() === 'Join!') {
       joinMeetup(meetup_id);
     } else {
       leaveMeetup(meetup_id);
     }
+
   });
 });
+
 
 function toggleButton() {
   var button = $('#join-meetup');
@@ -21,9 +22,10 @@ function toggleButton() {
 }
 
 function joinMeetup(current_meetup_id) {
+
   $.ajax({
     method: 'POST',
-    url: '/meetups_join.json',
+    url: '/meetups_join',
     data: { meetup_id: current_meetup_id }
   })
   .done(function(user) {
@@ -35,7 +37,7 @@ function joinMeetup(current_meetup_id) {
 function leaveMeetup(meetup_id) {
   $.ajax({
     method: 'POST',
-    url: '/meetups_leave.json',
+    url: '/meetups_leave',
     data: { meetup_id: meetup_id }
   })
   .done(function(attendee) {

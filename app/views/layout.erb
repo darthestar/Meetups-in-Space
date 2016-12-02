@@ -18,12 +18,12 @@
             <li>Signed in as <%= current_user.username %></a></li>
             <li><a href="/sign_out">Sign Out</a></li>
           <% else %>
-            <li><a href="/auth/github">Sign In</a></li>
+            <li><a href="/auth/github/callback">Sign In</a></li>
           <% end %>
         </ul>
       </div>
     </div>
-
+s
     <% if flash.any? %>
       <div class="flash">
         <div class="container">

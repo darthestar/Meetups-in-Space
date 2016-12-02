@@ -5,7 +5,7 @@
   <% if @my_meetups %>
     <ul>
       <% @my_meetups.sort.each do |meetup| %>
-      <li><a href = "/meetup/<%[meetup.id]%>"><%= "#{meetup.name}" %></a></li>
+      <li><a href = "/meetups/<%= meetup['id'] %>"><%= "#{meetup.name}" %></a></li>
       <% end %>
     </ul>
   <% end %>
@@ -22,6 +22,9 @@
 </ul>
 
 <br></br>
+
 <% if logged_in? %>
+<div class="create">
 <a href="/meetups/new">Create A Meetup</a>
+</div>
 <% end %>

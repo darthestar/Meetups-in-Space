@@ -1,7 +1,6 @@
 require 'sinatra'
 require_relative 'config/application'
 
-
 helpers do
   def current_user
     if @current_user.nil? && session[:user_id]
@@ -42,7 +41,8 @@ end
 
 get '/meetups' do
   @meetups = Meetup.all.order(:name)
-  if @current_user
+
+  if logged_in?
     @my_meetups = User.find(session[:user_id]).meetups
   end
 

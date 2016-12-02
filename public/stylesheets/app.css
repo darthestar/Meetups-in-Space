@@ -4,16 +4,25 @@ body {
   color: #FFFFFF;
 }
 
-a,
-a:visited {
+a {
   color: #FFFFFF;
-  text-decoration: none;
 }
 
-.container {
+.button {
+  color: #FF0000;
+
+}
+
+.create a {
+  color: #F3FF33;
+}
+
+.container a {
   max-width: 1024px;
   margin: 0 auto;
 }
+
+
 
 .top-bar {
   background-color: #3C3C3C;

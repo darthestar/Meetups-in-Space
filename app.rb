@@ -1,5 +1,6 @@
 require 'sinatra'
 require_relative 'config/application'
+
 helpers do
   def current_user
     if @current_user.nil? && session[:user_id]

@@ -23,7 +23,6 @@ end
 get '/' do
   redirect '/meetups'
 end
-binding.pry
 get '/auth/github/callback' do
   user = User.find_or_create_from_omniauth(env['omniauth.auth'])
   session[:user_id] = user.id

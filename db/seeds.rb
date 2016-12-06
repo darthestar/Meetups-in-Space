@@ -5,7 +5,6 @@
 #
 #   Person.create(first_name: 'Eric', last_name: 'Kelly')
 
-binding.pry
 
 # create Meetup Memberships
 paul= User.create({provider: "github", uid: "1631404", username: "Paul", email: "example@gmail.com", avatar_url: "http://img06.deviantart.net/3659/i/2004/05/2/e/pink_flower.jpg"} )

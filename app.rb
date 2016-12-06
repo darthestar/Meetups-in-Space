@@ -1,6 +1,6 @@
 require 'sinatra'
 require_relative 'config/application'
-
+require 'pry'
 helpers do
   def current_user
     if @current_user.nil? && session[:user_id]
@@ -23,7 +23,7 @@ end
 get '/' do
   redirect '/meetups'
 end
-
+binding.pry
 get '/auth/github/callback' do
   user = User.find_or_create_from_omniauth(env['omniauth.auth'])
   session[:user_id] = user.id

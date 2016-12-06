@@ -5,7 +5,6 @@ configure :development, :test do
   Dotenv.load
 
   # Load the following libraries
-  require 'pry'
 end
 
 # For all environments, run the following code
